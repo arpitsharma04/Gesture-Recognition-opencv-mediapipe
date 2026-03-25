@@ -15,11 +15,9 @@ hands = mp_hands.Hands(
 )
 mp_drawing = mp.solutions.drawing_utils
 
-
 def calculate_distance(p1, p2):
     """Euclidean distance between 2 points"""
     return math.sqrt((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2)
-
 
 def is_thumb_up(landmarks):
     thumb_tip = landmarks[mp_hands.HandLandmark.THUMB_TIP]
@@ -139,7 +137,7 @@ def gesture_recognition():
         gesture_detected = ""
 
         if started and results.multi_hand_landmarks:
-            # Draw landmarks on white background
+            
             for hand in results.multi_hand_landmarks:
                 mp_drawing.draw_landmarks(white_bg, hand, mp_hands.HAND_CONNECTIONS)
 
